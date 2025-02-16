@@ -77,6 +77,8 @@ export default function Home() {
               layout="fill"
               objectFit="cover"
               className="lg:scale-[110%] scale-[150%]"
+              quality={100}
+              unoptimized={false}
             />
           </div>
         </div>
@@ -87,7 +89,7 @@ export default function Home() {
           {tabs.map((data, index) => (
             <div key={index} className="mr-10">
               <button onClick={() => setCurrentTab(data.value)}>
-                <p className={currentTab != data.value ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
+                <p className={currentTab != data.value ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-[-0.5px] after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
               </button>
             </div>
           ))}
