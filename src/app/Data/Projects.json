@@ -1,0 +1,22 @@
+{
+    "1": {
+        "title": "Modal Improvisation (Instrument)",
+        "desc": "Real-time MIDI functionality for a performance-ready instrument, built entirely in Max. Synth pad created from scratch using multichannel harmonics and versatile comb filtering.",
+        "link": "https://youtu.be/rDcdh9dqW9Q"
+    }, 
+    "2": {
+        "title": "AlumniDB",
+        "desc": "Service to connect students with alumni, fostering meaningful connections between curious learners and insightful mentors.",
+        "link": "https://github.com/sidbanerjee001/GradDashboard"
+    },
+    "3": {
+        "title": "3-Stage Audio Amplifier",
+        "desc": "5.5x gain amplifier (2.4% THD) with a filter, gain, and output stage. Designed & tested in LTSpice and brought to life with spare parts.",
+        "link": "https://youtu.be/_K2gZXFDqv8"
+    }, 
+    "4": {
+        "title": "Chord Structure Analyzer",
+        "desc": "An algorithm in Python with music21 to process chord changes given a MusicXML file and analyze them, structurally, for real-time practice.",
+        "link": "https://youtu.be/lsKyYaAWFOA"
+    }
+}

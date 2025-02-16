@@ -1,0 +1,26 @@
+{
+    "First": {
+        "start": "JAN 2025",
+        "end": "PRESENT",
+        "role": "Researcher",
+        "company": "CNMAT @ UC Berkeley",
+        "description": "Studying morphisms between semantic clustering and [music] feature clustering, in pursuit of parameter embedding and network bending for stable audiovisual generation. Permits fine tuning of gen AI in a multimodal medium.",
+        "link": "https://cnmat.berkeley.edu/"
+      }, 
+      "Second": {
+        "start": "MAY",
+        "end": "AUG 2024",
+        "role": "SWE Intern",
+        "company": "Tona AI",
+        "description": "Full-stack developer for a startup integrating AI into the music production process. Cool work involving designing frontend UI/UX (React, Next.JS), developing backend ML models (PyTorch, LarsNet, Docker), and managing databases (AWS, Supabase).",
+        "link": "https://www.tona.ai/"
+      }, 
+      "Third": {
+        "start": "JUN 2021",
+        "end": "AUG 2022",
+        "role": "Research Intern",
+        "company": "MAT @ UCSB",
+        "description": "Cognitive-science informed mappings from music to sculpture (1) in pursuit of meaningful synaesthetic artwork & exploring deep reinforcement learning as an experience in extended reality (2) i.e. live ML training in AR/VR.",
+        "link": "https://ilab.cs.ucsb.edu/"
+    }
+}
