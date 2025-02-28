@@ -1,101 +1,104 @@
-import Image from "next/image";
+'use client'
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from 'next/image';
+
+import TextPop from "./UI/TextPop";
+import ExperienceRender from "./UI/Experience";
+import GithubIcon from "./UI/GithubIcon";
+
+import profileImage from './Img/profile.jpg';
+import { useRouter } from "next/navigation";
+import WritingIcon from "./UI/LinkedInIcon";
+
+import ExperienceData from './Data/Experiences.json';
+import ProjectData from './Data/Projects.json';
+import ProjectPreviewRender from "./UI/ProjectPreview";
+
+const About = () => {
+
+  return (
+    <div id="blurb-wrapper" className="my-10">
+      <p className="my-2">I'm currently a sophomore studying Electrical Engineering &amp; Computer Science and Applied Math. My academic interests are in <TextPop>optimization, signal processing, stochastic modeling &amp; machine learning, and numerical analysis.</TextPop></p>
+      <p className="my-2">Creatively, I'm passionate about engineering the future of artistic expression and experience. This includes generative AI models, virtual instrument, real-time feedback systems, and computer-assisted artwork.</p>
+      <hr className="my-10 border-[#8080ff30] w-[15%]"/>
+      <p className="my-2">Right now, I'm an undergrad researcher @ Berkeley's CNMAT creating embedding spaces via autoencoders (i.e. unsupervised training), and developing geometric, probabilistic, conceptual, and topological morphisms between semantics and music.</p>
+      <p className="my-2">I'll be working at Amazon this summer as a Software Development Intern; I hope to build a career in software engineering and transition into R&D for generative AI and creative ML.</p>
+      <hr className="my-10 border-[#8080ff30] w-[15%]"/>
+      <p className="text-gray-500 text-sm">Talk [jazz, art, computer science, math, etc.] with me: sidbanerjee[at]berkeley.edu.</p>
+      <div className="my-10">
+        <TextPop><Link href={"/music"}>→ Music Blog</Link></TextPop>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const router = useRouter();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  const [currentTab, setCurrentTab] = useState('about');
+
+  const tabs = [
+    { name: 'about', value: 'about' },
+    { name: 'experience', value: 'experience' },
+    { name: 'projects', value: 'projects' }
+  ]
+
+  const tabsMap = new Map([
+    ["about", <About/>],
+    ["experience", <ExperienceRender ExperienceData={ExperienceData}/>],
+    ["projects", <ProjectPreviewRender data={ProjectData}/>]
+  ])
+
+  return (
+    <>
+      <div id="full-wrapper" className="w-[80%] lg:w-[50%] m-auto my-24">
+        <div id="header-wrapper" className="my-10 flex flex-row items-end justify-between">
+          <div>
+            <div className="flex flex-row">
+              <h1 className="font-medium text-xl">Sid Banerjee</h1>
+              <div id="social-buttons-wrapper" className="flex flex-row justify-end gap-x-4 mx-4">
+                <button onClick={() => router.push("https://github.com/sidbanerjee001")}>
+                  <GithubIcon/>
+                </button>
+                <button onClick={() => router.push("https://www.linkedin.com/in/sidbanerjee00/")}>
+                  <WritingIcon/>
+                </button>
+              </div>
+            </div>
+            <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
+            <h2 className="text-sm text-gray-400 mt-2">Currently @ Berkeley studying: EECS, Math, Audio Tech.</h2>
+          </div>
+          <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={profileImage}
+              alt="Profile Picture"
+              width={250}
+              height={150}
+              className="object-cover lg:scale-[150%] scale-[150%]"
+              quality={90}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <hr/>
+
+        <div id="tabs" className="my-10 flex flex-row items-center">
+          {tabs.map((data, index) => (
+            <div key={index} className="mr-10">
+              <button onClick={() => setCurrentTab(data.value)}>
+                <p className={currentTab != data.value ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div id="content-wrapper" className="mt-8">
+          {tabsMap.get(currentTab) || <p>No content here...</p>}
+        </div>
+      </div>
+    </>
   );
 }
