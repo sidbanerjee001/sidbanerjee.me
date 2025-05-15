@@ -4,7 +4,7 @@ date: "2025-05-14"
 ---
 # Motivation
 
-Prime numbers are incredibly important for a lot of things in math: factoring, p-groups, modular arithmetic, etc. Many fields in computer science build upon these principles by applying them to areas like [security](https://crypto.stackexchange.com/questions/20867/why-are-primes-important-for-encryption) and [cryptography](https://en.wikipedia.org/wiki/RSA_cryptosystem). Naturally, we'll find it important to check whether a number is prime.
+Prime numbers are incredibly important for a lot of things in math: factoring, p-groups, modular arithmetic, etc. Many fields in computer science build upon these principles by applying them to areas like [security](https://crypto.stackexchange.com/questions/20867/why-are-primes-important-for-encryption) and [cryptography](https://en.wikipedia.org/wiki/RSA_cryptosystem). Naturally, we find it important to check whether a number is prime.
 
 The naive algorithm for "primality testing" involves checking whether every number up to $n-1$ divides $n$ (trial division). This algorithm appears to operate in linear time (perhaps faster if we only check numbers up to $\sqrt{n}$), but it actually *doesn't* have a polynomial time complexity. Formally speaking, time complexity is measured with respect to the size of the input, and in this case, $n$ is the *value* of the input. Since it takes $\log{n}$ bits to represent the number $n$, our time complexity is actually
 
@@ -40,9 +40,11 @@ although $1387$ is not a prime number. Our algorithm may pick such a Fermat liar
 
 # Proof of $\Pr[\text{correct}] \geq \frac{1}{2}$
 
-We call a number $g$ a "Fermat witness" if $g^{N-1} \not\equiv 1 \; (\text{mod} \;N)$. How many more Fermat liars are there than witnesses in the range $(1, N)$? If we can compare the set of Fermat liars to Fermat witnesses, we can deduce this algorithm's one-sided correctness, since we're sampling uniformly from $\mathbb{Z} / N\mathbb{Z}$ (algebraic notation for the integers modulo $N$).
+For clarity, we're sampling from $\mathbb{Z} / N\mathbb{Z}$ (algebraic notation for the integers modulo $N$).
 
-Since $N$ is composite (and not a Carmichael number) there exists at least one Fermat witness, which we denote $g$. Multiplying $g$ by any Fermat liar results in a Fermat witness, as shown below for an arbitrary Fermat liar $b$.
+We call a number $g$ a "Fermat witness" if $g^{N-1} \not\equiv 1 \; (\text{mod} \;N)$. Put simply, it's a number for which FLT fails, proving $N$ is composite. How many more Fermat liars are there than witnesses in $\mathbb{Z} / N\mathbb{Z}$? If we can compare the set of Fermat liars to Fermat witnesses, we can deduce this algorithm's one-sided correctness as we're sampling uniformly from the union of these sets. 
+
+Since $N$ is composite (and not a Carmichael number) there exists at least one Fermat witness, which we denote $g$. Multiplying any Fermat liar by $g$ results in a Fermat witness, as shown below for an arbitrary Fermat liar $b$.
 
 $$
 (gb)^{n-1} \equiv g^{n-1} b^{n-1} \equiv g^{n-1} \cdot 1 \equiv g^{n-1} \not\equiv 1 \; (\text{mod} \;N).
@@ -59,12 +61,12 @@ b_1 &= b_2.
 \end{align*}
 $$
 
-Note we select $g$ coprime to $N$ (so $N$ isn't trivially composite), allowing us to cancel it via it's modular inverse. This one-to-one mapping implies that at least half the numbers in $\mathbb{Z} / N\mathbb{Z}$ are Fermat witnesses--values that correctly identify $N$ as composite. Since our algorithm picks an integer at random, we can conclude that our probability of correctness if $N$ is compositive and not Carmichael is at least $\frac{1}{2}$.
+Note $g$ is coprime to $N$ by virtue of being a witness, allowing us to cancel it via it's modular inverse. This one-to-one mapping implies that at least half the numbers in $\mathbb{Z} / N\mathbb{Z}$ are Fermat witnesses--values that correctly identify $N$ as composite. Since our algorithm picks an integer at random, we can conclude that our probability of correctness if $N$ is compositive and not Carmichael is at least $\frac{1}{2}$.
 
-This doesn't sound impressive, though. But remember we only sampled one value to test. If we sampled more and ran independent trials, the probability we'd be incorrect across all consecutive runs is around $1-\left( \frac{1}{2} \right)^t$ for $t$ trials, which achieves a 99% correctness rate in under 10 trials! This is a technique called boosting.
+Maybe this isn't so impressive. It's not much better than flipping a coin, right? But remember we only sampled one value to test. If we ran several independent trials (a technique called boosting), the probability we'd be incorrect across all consecutive runs is around $1-\left( \frac{1}{2} \right)^t$ for $t$ trials, which achieves a 99% correctness rate in under 10 trials!
 
 # Runtime
 
 A single call to Fermat primality is dominated by the exponentiation and modulation operations, which are done in $O(\log^2 n \log \log n)$ time. Running for $k$ trials we have a runtime of $O(k\log^2 n \log \log n)$, which is highly efficient.
 
-[^1]: Carmichael numbers, of which there are infinitely many, are the Achilles' heel of Fermat primality testing. A Carmichael number is a composite number $c$ that satisfies the property $b^{c-1} \equiv \; (\text{mod} \;c)$ for all integers $b$ coprime to $c$. In fact, Carmichael numbers contradicts the converse of FLT and prevents it from being an absolute test.
+[^1]: Carmichael numbers, of which there are infinitely many, are the Achilles' heel of Fermat primality testing. A Carmichael number is a composite number $c$ that satisfies the property $b^{c-1} \equiv \; (\text{mod} \;c)$ for all integers $b$ coprime to $c$. In fact, Carmichael numbers contradict the converse of FLT and prevent it from being an absolute test.
