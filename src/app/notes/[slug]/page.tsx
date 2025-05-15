@@ -9,6 +9,8 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm';
 
+type Params = Promise<{ slug: string }>;
+
 export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'src/NotesMD');
   const files = fs.readdirSync(dir);
@@ -18,7 +20,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function NotesPage({ params }: { params: { slug: string } }) {
+export default async function NotesPage({ params }: { params: Params }) {
+  const { slug } = await params;
   const p = await params;
   const filePath = path.join(process.cwd(), 'src/NotesMD', `${p.slug}.md`);
 
