@@ -62,7 +62,7 @@ const ExperienceRender: React.FC<ExperienceRenderProps> = ({ExperienceData}) => 
             <hr className="my-10 border-[#8080ff30] w-[15%]"/>
 
             <div id="classes-wrapper">
-                <p className="text-sm text-gray-500">Classes I've really enjoyed: Discrete Math, Probability, Efficient Algorithms &amp; Intractable Problems, Data Structures &amp; Algorithms, Signals &amp; Systems, Designing Information Devices &amp; Systems</p>
+                <p className="text-sm text-gray-500">Classes I've really enjoyed: Efficient Algorithms &amp; Intractable Problems, Signals &amp; Systems, Sound &amp; Music Computing, Designing Information Devices &amp; Systems</p>
             </div>
         </div>
     );

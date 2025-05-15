@@ -1,0 +1,11 @@
+{
+    "1": {
+        "title": "Algorithms",
+        "articles": {
+            "a1": {
+                "title": "Randomized Primality Testing with Monte Carlo Algorithms",
+                "link": "/notes/fermat-primality"
+            }
+        }
+    }
+}

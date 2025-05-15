@@ -9,13 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.7",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.16.22",
+    "next": "^15.3.2",
+    "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",
-    "react-wrap-balancer": "^1.1.1"
+    "react-wrap-balancer": "^1.1.1",
+    "rehype-katex": "^7.0.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

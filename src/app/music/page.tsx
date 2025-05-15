@@ -44,7 +44,7 @@ const MusicPage = () => {
                     {tabs.map((data, index) => (
                         <div key={index} className="mr-10">
                         <button onClick={() => setCurrentTab(data.name)}>
-                            <p className={currentTab != data.name ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
+                            <p className={currentTab != data.name ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-[-1px] after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4.5px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
                         </button>
                         </div>
                     ))}
