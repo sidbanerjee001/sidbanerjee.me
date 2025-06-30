@@ -16,6 +16,25 @@ export default {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', ...fontFamily.sans]
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            code: {
+              background: '#ffeff0',
+              wordWrap: 'break-word',
+              boxDecorationBreak: 'clone',
+              padding: '.1rem .3rem .2rem',
+              borderRadius: '.2rem',
+            }
+          },
+        },
       }
     },
   },

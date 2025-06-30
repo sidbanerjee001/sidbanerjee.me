@@ -8,6 +8,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm';
+import Link from 'next/link';
 
 type Params = Promise<{ slug: string }>;
 
@@ -26,7 +27,7 @@ export default async function NotesPage({ params }: { params: Params }) {
   const filePath = path.join(process.cwd(), 'src/NotesMD', `${p.slug}.md`);
 
   if (!fs.existsSync(filePath)) {
-    return <div className="text-red-500">Post not found.</div>;
+    return <div className="text-sm">Post not found.</div>;
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -37,14 +38,21 @@ export default async function NotesPage({ params }: { params: Params }) {
         <a href={"https://sidbanerjee.me"}>
             <svg viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M20 12H4m0 0l6-6m-6 6l6 6"></path> </g></svg>
         </a>
-        <div id="header-wrapper" className="mt-8 flex flex-row items-end justify-between">
+        <div id="header-wrapper" className="my-8 flex flex-row items-end justify-between">
             <div>
                 <div className="flex flex-row">
                     <h1 className="font-medium text-xl">{data.title || p.slug}</h1>
                 </div>
-                <div className="mt-4 mb-8">
+                <div className="mt-4">
                     <span className="text-xs text-gray-400">{data.date}</span>
                 </div>
+                {data.link ? <>
+                    <div className="mt-4">
+                        <Link href={data.link[1]} className="text-sm text-blue-500 hover:underline">
+                            {data.link[0]}
+                        </Link>
+                    </div>
+                </> : <></>}
             </div>
         </div>
 

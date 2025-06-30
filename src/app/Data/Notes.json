@@ -1,5 +1,14 @@
 {
     "1": {
+        "title": "Music Technology",
+        "articles": {
+            "a1": {
+                "title": "John Coltrane, Jazz, and Markov Models",
+                "link": "/notes/markov-improv"
+            }
+        }
+    },
+    "2": {
         "title": "Algorithms",
         "articles": {
             "a1": {
