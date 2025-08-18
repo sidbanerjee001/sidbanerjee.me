@@ -1,26 +1,34 @@
 {
     "Amazon": {
       "start": "MAY 2025",
-      "end": "PRESENT",
+      "end": "AUG 2025",
       "role": "SDE Intern ",
       "company": "Amazon",
-      "description": "Designing and deploying Cerberus, an agentic AI model that analyzes AdTech publisher-region business metrics, integrating the team’s codebase as a retrieval-augmented generation (RAG) source for enhanced insights & recommendations.",
+      "description": "Designed and deployed Cerberus, a scalable agentic AI model that aggregates and analyzes business metrics for global-scale AdTech systems.",
       "link": "https://advertising.amazon.com/adtech-solutions"
     },
+    "BAIR": {
+        "start": "JULY 2025",
+        "end": "PRESENT",
+        "role": "ML Researcher",
+        "company": "Berkeley Artificial Intelligence Research (BAIR)",
+        "description": "[Speech Group] Working on signal processing, multimodal ML models, and transformers for speech, conversation, and music.",
+        "link": "https://people.eecs.berkeley.edu/~gopala/"
+      },
     "CNMAT": {
         "start": "JAN 2025",
         "end": "PRESENT",
-        "role": "Researcher",
+        "role": "ML Researcher",
         "company": "CNMAT @ UC Berkeley",
-        "description": "Conducting multi-modal research on creating embedding spaces via unsupervised ML & developing geometric, probabilistic, conceptual, and topological morphisms between semantics and music.",
+        "description": "Representation learning for multimodal morphisms, neural synthesis for optimized sound hybridization using representation learning and attention.",
         "link": "https://cnmat.berkeley.edu/"
-      }, 
+      },
     "Tona": {
       "start": "MAY",
       "end": "AUG 2024",
       "role": "SWE Intern",
       "company": "Tona AI",
-      "description": "Full-stack developer for a startup integrating AI into the music production process. Cool work involving designing frontend UI/UX (React, Next.JS), developing backend ML models (PyTorch, LarsNet, Docker), and managing databases (AWS, Supabase).",
+      "description": "Full-stack developer for a startup integrating AI into the music production process. Cool work involving designing frontend UI/UX (React, Next.JS), developing backend ML models (PyTorch, LarsNet, Docker), and managing databases (AWS s3, Supabase).",
       "link": "https://www.tona.ai/"
     }, 
     "UCSB": {
@@ -28,7 +36,7 @@
       "end": "AUG 2022",
       "role": "Research Intern",
       "company": "MAT @ UCSB",
-      "description": "Cognitive-science informed mappings from music to sculpture (1) in pursuit of meaningful synaesthetic artwork & exploring deep reinforcement learning as an experience in extended reality (2) i.e. live ML training in AR/VR.",
+      "description": "Cognitive-science informed mappings from music to sculpture in pursuit of meaningful synaesthetic artwork (1) & exploring deep reinforcement learning as an experience in extended reality i.e. live ML training in AR/VR (2).",
       "link": "https://ilab.cs.ucsb.edu/"
     }
 }

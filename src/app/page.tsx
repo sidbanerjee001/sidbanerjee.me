@@ -23,11 +23,11 @@ const About = () => {
 
   return (
     <div id="blurb-wrapper" className="my-10">
-      <p className="my-2">I'm currently a sophomore studying Electrical Engineering &amp; Computer Science and Applied Math. My academic interests are in <TextPop>optimization, digital signal processing, and machine learning.</TextPop></p>
+      <p className="my-2">I'm currently a junior studying Electrical Engineering &amp; Computer Science and Applied Math. My academic interests are in <TextPop>optimization, digital signal processing, and machine learning.</TextPop></p>
       <p className="my-2">Creatively, I'm passionate about engineering the future of artistic expression and experience. This includes generative AI models, virtual instruments, real-time harmonic systems, and computer-assisted artwork.</p>
       <hr className="my-10 border-[#8080ff30] w-[15%]"/>
-      <p className="my-2">Right now, I'm an undergrad researcher @ Berkeley's CNMAT studying multi-modal representation learning; I hope to soon work on implementing randomized algorithms to solve optimization problems in temporal/spectral pursuit.</p>
-      <p className="my-2">I'll be working at Amazon this summer as a Software Development Intern; I hope to build a career in software engineering and transition into R&D for generative AI and creative ML.</p>
+      <p className="my-2">Right now, I'm an undergrad researcher @ Berkeley's CNMAT studying <TextPop>neural methods for sound hybridization, particularly through the lens of representation learning and attention</TextPop>. I'm also conducting research @ BAIR on <TextPop> modeling conversations through causal inference of speech behavior and several music-related models </TextPop> (transcription, classification, etc.).</p>
+      <p className="my-2">I have industry experience in both big tech and startups, and am always looking for my next technical challenge.</p>
       <hr className="my-10 border-[#8080ff30] w-[15%]"/>
       <p className="text-gray-500 text-sm">Talk [jazz, art, computer science, math, etc.] with me: sidbanerjee[at]berkeley.edu.</p>
       <div className="my-10">
@@ -73,7 +73,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">Currently @ Berkeley studying: EECS, Applied Math, Audio Tech.</h2>
+            <h2 className="text-sm text-gray-400 mt-2">Currently @ Berkeley studying EECS & Applied Math.</h2>
           </div>
           <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
