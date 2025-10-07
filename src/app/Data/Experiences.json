@@ -1,4 +1,20 @@
 {
+    "BAIR": {
+        "start": "JULY 2025",
+        "end": "PRESENT",
+        "role": "ML Researcher",
+        "company": "Berkeley Artificial Intelligence Research (BAIR)",
+        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought; we recently submitted to ICLR 2025 and are pending review.",
+        "link": "https://people.eecs.berkeley.edu/~gopala/"
+      },
+    "CNMAT": {
+        "start": "JAN 2025",
+        "end": "PRESENT",
+        "role": "ML Researcher",
+        "company": "CNMAT @ UC Berkeley",
+        "description": "Deep learning for sound hybridization, framed as an improvement to heuristic combinatorial optimization methods.",
+        "link": "https://cnmat.berkeley.edu/"
+      },
     "Amazon": {
       "start": "MAY 2025",
       "end": "AUG 2025",
@@ -7,22 +23,6 @@
       "description": "Designed and deployed Cerberus, a scalable agentic AI model that aggregates and analyzes business metrics for global-scale AdTech systems.",
       "link": "https://advertising.amazon.com/adtech-solutions"
     },
-    "BAIR": {
-        "start": "JULY 2025",
-        "end": "PRESENT",
-        "role": "ML Researcher",
-        "company": "Berkeley Artificial Intelligence Research (BAIR)",
-        "description": "[Speech Group] Working on signal processing, multimodal ML models, and transformers for speech, conversation, and music.",
-        "link": "https://people.eecs.berkeley.edu/~gopala/"
-      },
-    "CNMAT": {
-        "start": "JAN 2025",
-        "end": "PRESENT",
-        "role": "ML Researcher",
-        "company": "CNMAT @ UC Berkeley",
-        "description": "Representation learning for multimodal morphisms, neural synthesis for optimized sound hybridization using representation learning and attention.",
-        "link": "https://cnmat.berkeley.edu/"
-      },
     "Tona": {
       "start": "MAY",
       "end": "AUG 2024",
