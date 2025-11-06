@@ -35,7 +35,7 @@ Unfortunately, we’re working with a fixed `metro` object which means every not
   
 Durations can be fractional, which prevents us from directly feeding it into a `ml.markov` object. Admittedly, I could have converted note lengths into milliseconds and rounded to create whole numbers that could be fed in, but I also wanted to experiment with creating my own Markov chains in Python.  
   
-A “bidirectional” hashmap relates unique note lengths to unique integer key values. This allows us to build a transition matrix $P$ and calculate probability distributions for each row. Recall that $P[i][j]$ is the probability that state $i$ transitions to state $j$. $\sum{P[i]}$ = 1; $P[i]$ is our sampling distribution for state $i$.  
+A “bidirectional” hashmap relates unique note lengths to unique integer key values. This allows us to build a transition matrix $P$ and calculate probability distributions for each row. Recall that $P[i][j]$ is the probability that state $i$ transitions to state $j$. $\sum_{j}{P[i][j]}$ = 1; $\vec{P}[i]$ is our sampling distribution for state $i$.  
   
 $n$ = 128 (arbitrary choice) values were sampled by my Markov chain. These values were imported into Max and iterated by list functions (`zl`) and a counter object (operating in $\mathbb{Z}/n\mathbb{Z}$ for $n$ = 128). Essentially, we’re iterating through the list of note lengths (since the values were already generated probabilistically in Python, unlike the MIDI chain which took advantage of `ml.markov`).  
   

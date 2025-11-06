@@ -22,18 +22,46 @@ import NotesPreviewRender from "./UI/NotesPreview";
 const About = () => {
 
   return (
-    <div id="blurb-wrapper" className="my-10">
-      <p className="my-2">I'm currently a junior studying Electrical Engineering &amp; Computer Science and Applied Math. My academic interests are in <TextPop>digital signal processing, acoustics, NLP, and machine learning.</TextPop></p>
-      <p className="my-2">Creatively, I'm passionate about engineering the future of artistic expression and experience. This includes generative AI models, virtual instruments, real-time harmonic systems, and computer-assisted artwork.</p>
-      <hr className="my-10 border-[#8080ff30] w-[15%]"/>
-      <p className="my-2">Right now, I'm conducting research @ BAIR on <TextPop> modeling conversations through causal inference of speech behavior</TextPop>, and @ CNMAT on <TextPop>deep learning methods for combinatoric optimization</TextPop>. I'm also on course staff of EECS16A as a UCS1.</p>
-      <p className="my-2">I have industry experience in both big tech and startups, and am always looking for my next technical challenge.</p>
-      <hr className="my-10 border-[#8080ff30] w-[15%]"/>
-      <p className="text-gray-500 text-sm">Talk [jazz, art, computer science, math, etc.] with me: sidbanerjee[at]berkeley.edu.</p>
-      <div className="my-5">
-        <TextPop><Link href={"/music"}>→ Music Blog</Link></TextPop>
-      </div>
+    <div id="blurb-wrapper" className="my-10 text-sm">
+    <p className="my-4">
+      I'm currently a junior studying Electrical Engineering &amp; Computer Science and Applied Math. 
+      My academic interests are in <TextPop>digital signal processing, acoustics, NLP, and machine learning.</TextPop>
+    </p>
+
+    <p className="my-4">
+      I'm broadly interested in multimodal AI/ML research (particularly in acoustics and generative music), 
+      forward deployed engineering, and technical/product management.
+    </p>
+
+    <p className="my-4">
+      Right now, I'm conducting research @ BAIR on <Link 
+        href="http://got-duplex.github.io/" 
+        target="_blank" 
+        className="inline-flex items-center text-gray-500 hover:text-gray-400 transition"
+      >
+        <span className="underline decoration-[#8080ff]"><TextPop>conversational behavior modeling</TextPop></span>
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-3 ml-1">
+          <path 
+            fillRule="evenodd" 
+            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" 
+            clipRule="evenodd" 
+          />
+        </svg>
+      </Link> through predictive transformer models and dynamic Graph of Thought generation, and @ CNMAT on <TextPop>deep learning methods for signal reconstruction</TextPop>. I'm also on course staff of 
+      EECS16A (Signal Processing &amp; Applied Linear Algebra).
+    </p>
+
+    <hr className="my-5 border-[#8080ff30] w-[10%]" />
+
+    <p className="text-gray-500 text-sm">
+      Talk [jazz, art, computer science, math, etc.] with me: sidbanerjee[at]berkeley.edu.
+    </p>
+
+    <div className="my-5">
+      <TextPop><Link href="/music">→ Music Blog</Link></TextPop>
     </div>
+  </div>
   );
 }
 

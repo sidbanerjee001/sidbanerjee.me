@@ -4,7 +4,7 @@
         "end": "PRESENT",
         "role": "ML Researcher",
         "company": "Berkeley Artificial Intelligence Research (BAIR)",
-        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought; we recently submitted to ICLR 2025 and are pending review.",
+        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought; we recently submitted to ICLR 2026 and are pending review.",
         "link": "https://people.eecs.berkeley.edu/~gopala/"
       },
     "CNMAT": {
@@ -12,7 +12,7 @@
         "end": "PRESENT",
         "role": "ML Researcher",
         "company": "CNMAT @ UC Berkeley",
-        "description": "Deep learning for sound hybridization, framed as an improvement to heuristic combinatorial optimization methods.",
+        "description": "Deep learning for differentiable, iterative sound hybridization. My work focuses on neural methods for optimizing a superposition of audio signals in an overdetermined system.",
         "link": "https://cnmat.berkeley.edu/"
       },
     "Amazon": {
@@ -20,7 +20,7 @@
       "end": "AUG 2025",
       "role": "SDE Intern ",
       "company": "Amazon",
-      "description": "Designed and deployed Cerberus, a scalable agentic AI model that aggregates and analyzes business metrics for global-scale AdTech systems.",
+      "description": "Designed and deployed Cerberus, a scalable agentic AI model that aggregates and analyzes business metrics for global-scale AdTech systems. Serves 80+ program-region combinations and is scaled to operate 24/7.",
       "link": "https://advertising.amazon.com/adtech-solutions"
     },
     "Tona": {

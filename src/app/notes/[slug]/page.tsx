@@ -34,7 +34,7 @@ export default async function NotesPage({ params }: { params: Params }) {
   const { content, data } = matter(fileContent);
 
   return (
-    <div id="full-wrapper" className="w-[80%] lg:w-[50%] m-auto my-24">
+    <div id="full-wrapper" className="w-[80%] lg:w-[60%] m-auto my-24">
         <a href={"https://sidbanerjee.me"}>
             <svg viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M20 12H4m0 0l6-6m-6 6l6 6"></path> </g></svg>
         </a>
@@ -58,7 +58,7 @@ export default async function NotesPage({ params }: { params: Params }) {
 
         <hr/>
 
-        <div id="content-wrapper" className="mt-8 prose prose-sm">
+        <div id="content-wrapper" className="mt-8 prose prose-sm max-w-none">
             <ReactMarkdown
                 remarkPlugins={[remarkMath, remarkGfm]}
                 rehypePlugins={[rehypeKatex]}
