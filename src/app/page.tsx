@@ -29,8 +29,8 @@ const About = () => {
     </p>
 
     <p className="my-4">
-      I'm broadly interested in multimodal AI/ML research (particularly in acoustics and generative music), 
-      forward deployed engineering, and technical/product management.
+      I'll be working at <TextPop>Apple</TextPop> as an ML Intern on the audio/acoustics team this Spring. I'm broadly interested in machine learning research (particularly in audio DSP and generative AI), 
+      forward deployed engineering, applied AI/ML roles, and technical/product management.
     </p>
 
     <p className="my-4">
@@ -48,7 +48,7 @@ const About = () => {
             clipRule="evenodd" 
           />
         </svg>
-      </Link> through predictive transformer models and dynamic Graph of Thought generation, and @ CNMAT on <TextPop>deep learning methods for signal reconstruction</TextPop>. I'm also on course staff of 
+      </Link> through predictive transformer models and dynamic Graph of Thought generation, and @ CNMAT on <TextPop>deep learning methods for sound hybridization</TextPop>. I'm also on course staff of 
       EECS16A (Signal Processing &amp; Applied Linear Algebra).
     </p>
 
@@ -101,7 +101,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">Currently @ Berkeley studying EECS & Applied Math.</h2>
+            <h2 className="text-sm text-gray-400 mt-2">ML for Audio and Acoustics @ CNMAT &amp; </h2>
           </div>
           <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
