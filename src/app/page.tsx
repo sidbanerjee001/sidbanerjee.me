@@ -15,9 +15,11 @@ import WritingIcon from "./UI/LinkedInIcon";
 import ExperienceData from './Data/Experiences.json';
 import ProjectData from './Data/Projects.json';
 import NotesData from './Data/Notes.json';
+import ResearchData from './Data/Research.json';
 
 import ProjectPreviewRender from "./UI/ProjectPreview";
 import NotesPreviewRender from "./UI/NotesPreview";
+import ResearchRender from "./UI/Research";
 
 const About = () => {
 
@@ -73,6 +75,7 @@ export default function Home() {
   const tabs = [
     { name: 'about', value: 'about' },
     { name: 'experience', value: 'experience' },
+    { name: 'research', value: 'research' },
     { name: 'projects', value: 'projects' },
     { name: 'notes', value: 'notes'}
   ]
@@ -80,13 +83,14 @@ export default function Home() {
   const tabsMap = new Map([
     ["about", <About/>],
     ["experience", <ExperienceRender ExperienceData={ExperienceData}/>],
+    ["research", <ResearchRender ResearchData={ResearchData}/>],
     ["projects", <ProjectPreviewRender data={ProjectData}/>],
     ["notes", <NotesPreviewRender data={NotesData}/>]
   ])
 
   return (
     <>
-      <div id="full-wrapper" className="w-[80%] lg:w-[50%] m-auto my-24">
+      <div id="full-wrapper" className="w-[85%] lg:w-[50%] m-auto my-24">
         <div id="header-wrapper" className="my-10 flex flex-row items-end justify-between">
           <div>
             <div className="flex flex-row">
@@ -101,7 +105,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">ML for Audio and Acoustics @ CNMAT &amp; </h2>
+            <h2 className="text-sm text-gray-400 mt-2">Machine Learning Research @ BAIR, CNMAT, Apple</h2>
           </div>
           <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
@@ -122,7 +126,7 @@ export default function Home() {
           {tabs.map((data, index) => (
             <div key={index} className="mr-10">
               <button onClick={() => setCurrentTab(data.value)}>
-                <p className={currentTab != data.value ? `text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 after:bottom-[-1px] after:left-0 hover:after:w-full after:transition-all after:duration-300` : `underline underline-offset-[4.5px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
+                <p className={currentTab != data.value ? `text-sm md:text-base text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 md:after:bottom-[-1px] after:bottom-[-2.5px] after:left-0 hover:after:w-full after:transition-all after:duration-300` : `text-sm md:text-base underline underline-offset-[4.5px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
               </button>
             </div>
           ))}

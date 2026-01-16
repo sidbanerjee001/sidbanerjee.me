@@ -1,0 +1,9 @@
+{
+    "1": {
+        "title": "Conversational Behavior Perception Foundation Model With Unified Graph-of-Thought Model",
+        "preprint_link": "https://www.arxiv.org/abs/2512.21706",
+        "description": "A conceptual reframing of full-duplex interaction from next-token prediction to next-behavior reasoning, arguing that modeling the causal chain from intent to action is critical for natural dialogue.",
+        "authors": "Shuchang PAN, Siddharth Banerjee, Dhruv Hebbar, Siddhant Patel, Akshaj Gupta, Kan Jen Cheng, Hanjo Kim, Zeyi Austin Li, Guan-Ting Lin, Cheol Jun Cho, Martin Q. Ma, Tingle Li, Xiaoyu Shi, Jiachen Lian, Gopala Anumanchipalli",
+        "conference_submissions": "ICML 2026, ICLR 2026"
+    }
+}
