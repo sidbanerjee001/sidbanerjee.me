@@ -34,7 +34,7 @@ const Research: React.FC<ResearchProps> = ({title, preprint_link, journal_link, 
                     <div className="flex flex-row items-end justify-end mt-[12px]">
                         {preprint_link && (
                             <>
-                                <button className="py-[2px] px-6 border-[1.5px] border-black text-xs transition hover:text-accent hover:border-accent" onClick={() => router.push(preprint_link)}>Preprint</button>
+                                <button className="py-[2px] px-6 border-[1.5px] border-black text-xs transition hover:text-accent hover:border-accent" onClick={() => router.push(preprint_link)}>Paper Link</button>
                             </>
                         )}
                         {journal_link && (
