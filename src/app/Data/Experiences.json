@@ -1,10 +1,18 @@
 {
+    "Apple": {
+        "start": "JAN 2026",
+        "end": "PRESENT",
+        "role": "Machine Learning Research Intern",
+        "company": "Apple",
+        "description": "[Acoustics HWE, Applied ML] Perceptually-informed evaluation suite for speech/music enhancement signal chains; particularly focused on non-intrusive metrics for real data and predictive models for identfying aural artifacts correlated with perceived audio quality.",
+        "link": "https://www.apple.com/"
+      },
     "BAIR": {
         "start": "JULY 2025",
         "end": "PRESENT",
         "role": "ML Researcher",
         "company": "Berkeley Artificial Intelligence Research (BAIR)",
-        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought; we recently submitted to ICLR 2026 and are pending review.",
+        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought.",
         "link": "https://people.eecs.berkeley.edu/~gopala/"
       },
     "CNMAT": {
@@ -12,7 +20,7 @@
         "end": "PRESENT",
         "role": "ML Researcher",
         "company": "CNMAT @ UC Berkeley",
-        "description": "Deep learning for differentiable, iterative sound hybridization. My work focuses on neural methods for optimizing a superposition of audio signals in an overdetermined system.",
+        "description": "Integrating perceptually-informed models into computer-assisted orchestration (neurograms, non-linear filters, SSIM), eliding onset segmentation and optimizing over a perceptually aware latent space.",
         "link": "https://cnmat.berkeley.edu/"
       },
     "Amazon": {
@@ -20,7 +28,7 @@
       "end": "AUG 2025",
       "role": "SDE Intern ",
       "company": "Amazon",
-      "description": "Designed and deployed Cerberus, a scalable agentic AI model that aggregates and analyzes business metrics for global-scale AdTech systems. Serves 80+ program-region combinations and is scaled to operate 24/7.",
+      "description": "Designed and deployed Cerberus, an AI agent that aggregates and analyzes business metrics for global AdTech systems. Serves 80+ program-region combinations and is scaled to operate 24/7.",
       "link": "https://advertising.amazon.com/adtech-solutions"
     },
     "Tona": {
@@ -35,7 +43,7 @@
       "start": "JUN 2021",
       "end": "AUG 2022",
       "role": "Research Intern",
-      "company": "MAT @ UCSB",
+      "company": "Media Arts & Technology Program @ UCSB",
       "description": "Cognitive-science informed mappings from music to sculpture in pursuit of meaningful synaesthetic artwork (1) & exploring deep reinforcement learning as an experience in extended reality i.e. live ML training in AR/VR (2).",
       "link": "https://ilab.cs.ucsb.edu/"
     }

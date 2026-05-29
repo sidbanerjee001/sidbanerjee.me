@@ -26,33 +26,44 @@ const About = () => {
   return (
     <div id="blurb-wrapper" className="my-10 text-sm">
     <p className="my-4">
-      I'm currently a junior studying Electrical Engineering &amp; Computer Science and Applied Math. 
-      My academic interests are in <TextPop>digital signal processing, acoustics, NLP, and machine learning.</TextPop>
+      I'm a rising senior at UC Berkeley studying Electrical Engineering &amp; Computer Science and Applied Math. 
+      My academic interests are in <TextPop>digital signal processing, acoustics/music, NLP, and machine learning.</TextPop>
     </p>
 
     <p className="my-4">
-      I'll be working at <TextPop>Apple</TextPop> as an ML Intern on the audio/acoustics team this Spring. I'm broadly interested in machine learning research (particularly in audio DSP and generative AI), 
-      forward deployed engineering, applied AI/ML roles, and technical/product management.
+      I'm interning at <TextPop>Apple</TextPop> on the Applied ML team under the Acoustics HWE organization. My work is focused on perceptually-informed
+      evals for speech/music enhancement signal chains (DSP and ML), including artifact detection through DSP and deep learning.
     </p>
 
-    <p className="my-4">
-      Right now, I'm conducting research @ BAIR on <Link 
-        href="http://got-duplex.github.io/" 
-        target="_blank" 
-        className="inline-flex items-center text-gray-500 hover:text-gray-400 transition"
-      >
-        <span className="underline decoration-[#8080ff]"><TextPop>conversational behavior modeling</TextPop></span>
-      
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-3 ml-1">
-          <path 
-            fillRule="evenodd" 
-            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" 
-            clipRule="evenodd" 
-          />
-        </svg>
-      </Link> through predictive transformer models and dynamic Graph of Thought generation, and @ CNMAT on <TextPop>deep learning methods for sound hybridization</TextPop>. I'm also on course staff of 
-      EECS16A (Signal Processing &amp; Applied Linear Algebra).
-    </p>
+    <div className="my-4">
+      At university, I conduct research @ CNMAT and BAIR on the following projects:
+      <ul className='list-disc list-inside px-4 my-4'>
+        <li className="mb-2">
+          Morphological and perceptually driven Matching Pursuit for computer-assisted orchestration.
+        </li>
+        <li className="mb-2">
+          <Link 
+          href="http://got-duplex.github.io/" 
+          target="_blank" 
+          className="inline-flex items-center text-gray-500 hover:text-gray-400 transition"
+          >
+            <span className="underline decoration-[#8080ff]"><TextPop>Conversational behavior modeling</TextPop></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-3 ml-1">
+              <path 
+                fillRule="evenodd" 
+                d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+          </Link>
+          &nbsp; through predictive transformer models and dynamic Graph of Thought generation
+        </li>
+        <li className="mb-2">
+          Agent-agent interaction, critique, and reasoning for red-room journalism.
+        </li>
+      </ul> 
+      I'm also on course staff of ELENG66 (Signal Processing &amp; Applied Linear Algebra).
+    </div>
 
     <hr className="my-5 border-[#8080ff30] w-[10%]" />
 
@@ -61,7 +72,8 @@ const About = () => {
     </p>
 
     <div className="my-5">
-      <TextPop><Link href="/music">→ Music Blog</Link></TextPop>
+      <TextPop><Link href="https://www.youtube.com/@iudexsbane">→ Music</Link></TextPop><br/>
+      <TextPop><Link href="/music">→ Notes on Music</Link></TextPop>
     </div>
   </div>
   );
@@ -105,7 +117,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">Machine Learning Research @ BAIR, CNMAT, Apple</h2>
+            <h2 className="text-sm text-gray-400 mt-2">Machine Learning Research @ Apple, CNMAT, BAIR</h2>
           </div>
           <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
