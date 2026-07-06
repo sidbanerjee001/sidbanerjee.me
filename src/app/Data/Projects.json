@@ -1,25 +1,30 @@
 {
-    "1": {
+     "1": {
+        "title": "Max/MSP Patches, Performances, & Sound Design",
+        "desc": "My work on the DSP/ML/Mathematical side of music, primarily using Max/MSP to create sounds, sequencers, and algorithmic sounds. I'm also exploring + documenting physical synthesis, Ableton techniques (plugins + M4L), and other technologies like SuperCollider and PureData.",
+        "link": "https://www.youtube.com/@SidBanerjee-p9z"
+    },
+    "2": {
         "title": "Conversational Behavior Reasoning in Full-Duplex Speech",
         "desc": "A framework that enables reasoning over conversational behaviors by modeling this process as causal inference within a Graph-of-Thought (GoT).",
         "link": "https://got-duplex.github.io/"
     }, 
-    "2": {
+    "3": {
         "title": "Modal Improvisation (Instrument)",
         "desc": "Real-time MIDI functionality for a performance-ready instrument, built entirely in Max. Synth pad created from scratch using multichannel harmonics and versatile comb filtering.",
         "link": "https://youtu.be/rDcdh9dqW9Q"
     },
-    "3": {
+    "4": {
         "title": "AlumniDB",
         "desc": "Service to connect students with alumni, fostering meaningful connections between curious learners and insightful mentors.",
         "link": "https://github.com/sidbanerjee001/GradDashboard"
     },
-    "4": {
+    "5": {
         "title": "3-Stage Audio Amplifier",
         "desc": "5.5x gain amplifier (2.4% THD) with a filter, gain, and output stage. Designed & tested in LTSpice and brought to life with spare parts.",
         "link": "https://youtu.be/_K2gZXFDqv8"
     }, 
-    "5": {
+    "6": {
         "title": "Chord Structure Analyzer",
         "desc": "An algorithm in Python with music21 to process chord changes given a MusicXML file and analyze them, structurally, for real-time practice.",
         "link": "https://youtu.be/lsKyYaAWFOA"
