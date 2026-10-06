@@ -26,18 +26,24 @@ const About = () => {
   return (
     <div id="blurb-wrapper" className="my-10 text-sm">
     <p className="my-4">
-      I'm a rising senior at UC Berkeley studying Electrical Engineering &amp; Computer Science and Applied Math. 
-      My academic interests are in <TextPop>digital signal processing, acoustics/music, NLP, and machine learning.</TextPop>
+      I'm a senior at UC Berkeley studying Electrical Engineering &amp; Computer Science.
+      My academic interests are in <TextPop>digital signal processing, acoustics/computational musicology (specifically MIR), and machine learning.</TextPop>
     </p>
 
     <p className="my-4">
-      I'm interning at <TextPop>Apple</TextPop> on the Applied ML team under the Acoustics HWE organization. My work is focused on perceptually-informed
-      evals for speech/music enhancement signal chains (DSP and ML), including artifact detection through DSP and deep learning.
+      My work is mainly focused on DSP signal chains and deep learning algorithms to better understand, characterize, and create music. I aim <i>not</i> to develop generative AI models but rather use AI/ML as a means of "crunching musical data" to reveal interesting, hidden structures &amp; power algorithms in human-centric composition tools.
+    </p>
+
+    <p className="my-4">
+      I create music/art via Max and Ableton. My Max patches are usually techniques for synthesis, including cross synthesis, subtractive synthesis, and granular synthesis. The music I produce with Ableton can be best described as a blend of electronic/hyperpop, cloud rap, and jazz.
     </p>
 
     <div className="my-4">
       At university, I conduct research @ CNMAT and BAIR on the following projects:
       <ul className='list-disc list-inside px-4 my-4'>
+        <li className="mb-2">
+          Studying the impact of deep learning modules on generated compositions to understand how context and memory benefit/impair creativity.
+        </li>
         <li className="mb-2">
           Morphological and perceptually driven Matching Pursuit for computer-assisted orchestration.
         </li>
@@ -58,11 +64,8 @@ const About = () => {
           </Link>
           &nbsp; through predictive transformer models and dynamic Graph of Thought generation
         </li>
-        <li className="mb-2">
-          Agent-agent interaction, critique, and reasoning for red-room journalism.
-        </li>
       </ul> 
-      I'm also on course staff of ELENG66 (Signal Processing &amp; Applied Linear Algebra).
+      I'm also a recitation/discussion leader on course staff of ELENG66 (Signal Processing &amp; Applied Linear Algebra); I work with the team to write and teach course content.
     </div>
 
     <hr className="my-5 border-[#8080ff30] w-[10%]" />
@@ -117,7 +120,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">Machine Learning Research @ Apple, CNMAT, BAIR</h2>
+            <h2 className="text-sm text-gray-400 mt-2">Student @ UC Berkeley, CO 2027</h2>
           </div>
           <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
             <Image
