@@ -31,11 +31,11 @@ const About = () => {
     </p>
 
     <p className="my-4">
-      My work is mainly focused on DSP signal chains and deep learning algorithms to better understand, characterize, and create music. I aim <i>not</i> to develop generative AI models but rather use AI/ML as a means of "crunching musical data" to reveal interesting, hidden structures &amp; power algorithms in human-centric composition tools.
+      My work is mainly focused on DSP signal chains and deep learning algorithms to better understand, characterize, and create music. I'm aim <i>not</i> to develop end-to-end generative AI models but rather use AI/ML as a means of "crunching musical data" to reveal interesting, hidden structures &amp; power algorithms in human-centric composition tools.
     </p>
 
     <p className="my-4">
-      I create music/art via Max and Ableton. My Max patches are usually techniques for synthesis, including cross synthesis, subtractive synthesis, and granular synthesis. The music I produce with Ableton can be best described as a blend of electronic/hyperpop, cloud rap, and jazz.
+      I create music/art via Max (+ TouchDesigner) and Ableton. My Max patches are usually techniques for synthesis, including cross synthesis, subtractive synthesis, and granular synthesis. I prefer TouchDesigner for audio-reactive visuals (over Jitter) and use OSC to connect to my Max patches. The music I produce with Ableton can be best described as a blend of electronic/hyperpop, cloud rap, and jazz.
     </p>
 
     <div className="my-4">
