@@ -1,5 +1,10 @@
 {
     "1": {
+        "title": "Evaluating the Jazz Transformer: Surprise, Risk, and Human Practice",
+        "notes_link": "/notes/jazz-transformer-eval",
+        "description": "Measuring risk-taking in the Jazz Transformer's generated solos with Markov judges calibrated on human improvisation: how many risks the model takes, whether its continuations make them sound intentional, and how well they fit the chords."
+    },
+    "2": {
         "title": "Conversational Behavior Perception Foundation Model With Unified Graph-of-Thought Model",
         "preprint_link": "https://www.arxiv.org/abs/2512.21706",
         "description": "A conceptual reframing of full-duplex interaction from next-token prediction to next-behavior reasoning, arguing that modeling the causal chain from intent to action is critical for natural dialogue.",

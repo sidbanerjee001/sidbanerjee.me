@@ -5,6 +5,14 @@
             "a1": {
                 "title": "John Coltrane, Jazz, and Markov Models",
                 "link": "/notes/markov-improv"
+            },
+            "a2": {
+                "title": "Evaluating the Jazz Transformer",
+                "link": "/notes/jazz-transformer-eval"
+            },
+            "a3": {
+                "title": "Perceptually-Informed Matching Pursuit for Computer Assisted Orchestration",
+                "link": "/notes/perceptual-matching-pursuit"
             }
         }
     },

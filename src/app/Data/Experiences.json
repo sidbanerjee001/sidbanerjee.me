@@ -1,7 +1,7 @@
 {
     "Apple": {
         "start": "JAN 2026",
-        "end": "PRESENT",
+        "end": "AUG 2026",
         "role": "Machine Learning Research Intern",
         "company": "Apple",
         "description": "[Acoustics HWE, Applied ML] Perceptually-informed evaluation suite for speech/music enhancement signal chains; particularly focused on non-intrusive metrics for real data and predictive models for identfying aural artifacts correlated with perceived audio quality.",

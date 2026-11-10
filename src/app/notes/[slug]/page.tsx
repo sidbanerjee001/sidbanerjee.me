@@ -70,6 +70,19 @@ export default async function NotesPage({ params }: { params: Params }) {
                             className="text-blue-600 underline hover:text-blue-800"
                         />
                     ),
+                    // `![caption](/audio/file.mp3)` renders an audio player instead of an image
+                    img: ({node, src, alt, ...props}) => {
+                        if (typeof src === 'string' && /\.(mp3|wav|ogg)$/i.test(src)) {
+                            return (
+                                <span className="block my-4">
+                                    {alt && <span className="block text-xs text-gray-500 mb-1">{alt}</span>}
+                                    <audio controls preload="none" src={src} className="w-full" />
+                                </span>
+                            );
+                        }
+                        // eslint-disable-next-line @next/next/no-img-element
+                        return <img src={src} alt={alt} {...props} />;
+                    },
                     h1: ({node, ...props}) => (
                         <h1
                             {...props}

@@ -6,6 +6,7 @@ interface ResearchProps {
     title: string;
     preprint_link?: string | null;
     journal_link?: string | null;
+    notes_link?: string | null;
     description: string;
     conference_submissions?: string | null;
 } 
@@ -14,7 +15,7 @@ interface ResearchRenderProps {
     ResearchData: Object;
 }
 
-const Research: React.FC<ResearchProps> = ({title, preprint_link, journal_link, description, conference_submissions}) => {
+const Research: React.FC<ResearchProps> = ({title, preprint_link, journal_link, notes_link, description, conference_submissions}) => {
     const router = useRouter();
     return(
         <div id="research-item" className="mb-[30px]">
@@ -31,7 +32,10 @@ const Research: React.FC<ResearchProps> = ({title, preprint_link, journal_link, 
                             Conference Submissions: {conference_submissions}
                         </p>
                     )}
-                    <div className="flex flex-row items-end justify-end mt-[12px]">
+                    <div className="flex flex-row items-end justify-end mt-[12px] gap-2">
+                        {notes_link && (
+                            <Link href={notes_link} className="py-[2px] px-6 border-[1.5px] border-black text-xs transition hover:text-accent hover:border-accent">Notes</Link>
+                        )}
                         {preprint_link && (
                             <>
                                 <button className="py-[2px] px-6 border-[1.5px] border-black text-xs transition hover:text-accent hover:border-accent" onClick={() => router.push(preprint_link)}>Paper Link</button>
@@ -58,6 +62,7 @@ const ResearchRender: React.FC<ResearchRenderProps> = ({ResearchData}) => {
                     title={value.title}    
                     preprint_link={value.preprint_link}
                     journal_link={value.journal_link}
+                    notes_link={value.notes_link}
                     description={value.description}
                     conference_submissions={value.conference_submissions}
                 />
