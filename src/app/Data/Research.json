@@ -5,6 +5,11 @@
         "description": "Measuring risk-taking in the Jazz Transformer's generated solos with Markov judges calibrated on human improvisation: how many risks the model takes, whether its continuations make them sound intentional, and how well they fit the chords."
     },
     "2": {
+        "title": "Perceptually-Informed Matching Pursuit for Computer Assisted Orchestration",
+        "notes_link": "/notes/perceptual-matching-pursuit",
+        "description": "Implementing a perceptually-weighted feature space (neurogram) and psychoacoustically-motivated audio distance metric in Matching Pursuit for Computer Assisted Orchestration."
+    },
+    "3": {
         "title": "Conversational Behavior Perception Foundation Model With Unified Graph-of-Thought Model",
         "preprint_link": "https://www.arxiv.org/abs/2512.21706",
         "description": "A conceptual reframing of full-duplex interaction from next-token prediction to next-behavior reasoning, arguing that modeling the causal chain from intent to action is critical for natural dialogue.",
