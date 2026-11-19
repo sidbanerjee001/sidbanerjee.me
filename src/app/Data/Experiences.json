@@ -1,50 +1,48 @@
 {
-    "Apple": {
-        "start": "JAN 2026",
-        "end": "AUG 2026",
-        "role": "Machine Learning Research Intern",
-        "company": "Apple",
-        "description": "[Acoustics HWE, Applied ML] Perceptually-informed evaluation suite for speech/music enhancement signal chains; particularly focused on non-intrusive metrics for real data and predictive models for identfying aural artifacts correlated with perceived audio quality.",
-        "link": "https://www.apple.com/"
-      },
-    "BAIR": {
-        "start": "JULY 2025",
-        "end": "PRESENT",
-        "role": "ML Researcher",
-        "company": "Berkeley Artificial Intelligence Research (BAIR)",
-        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought.",
-        "link": "https://people.eecs.berkeley.edu/~gopala/"
-      },
     "CNMAT": {
         "start": "JAN 2025",
         "end": "PRESENT",
         "role": "ML Researcher",
         "company": "CNMAT @ UC Berkeley",
-        "description": "Integrating perceptually-informed models into computer-assisted orchestration (neurograms, non-linear filters, SSIM), eliding onset segmentation and optimizing over a perceptually aware latent space.",
+        "description": "Researching better evaluations for generative compositions, mainly in contextualized surprise/entropy for quantifying justified risk and creativity. Previously integrated perceptually-informed models into computer-assisted orchestration (neurograms, non-linear filters, SSIM), eliding onset segmentation and optimizing over a perceptually aware latent space.",
         "link": "https://cnmat.berkeley.edu/"
-      },
+    },
+    "BAIR": {
+        "start": "JULY 2025",
+        "end": "PRESENT",
+        "role": "ML Researcher",
+        "company": "Berkeley Artificial Intelligence Research (BAIR)",
+        "description": "[Speech Group] Working on full-duplex conversational behavior reasoning through predictive Transformer models and causal inference within a Graph of Thought. Most recently, I worked on an agent-agent orchestration pipeline for providing writing critique.",
+        "link": "https://people.eecs.berkeley.edu/~gopala/"
+    },
+    "Apple": {
+        "start": "JAN 2026",
+        "end": "AUG 2026",
+        "role": "Machine Learning Research Intern",
+        "company": "Apple",
+        "description": "[Acoustics HWE, Applied ML] Perceptually-informed evaluation suite for speech/music enhancement signal chains; particularly focused on non-intrusive metrics for real data and engineering predictive models for identifying aural artifacts correlated with audio quality."
+    },
     "Amazon": {
-      "start": "MAY 2025",
-      "end": "AUG 2025",
-      "role": "SDE Intern ",
-      "company": "Amazon",
-      "description": "Designed and deployed Cerberus, an AI agent that aggregates and analyzes business metrics for global AdTech systems. Serves 80+ program-region combinations and is scaled to operate 24/7.",
-      "link": "https://advertising.amazon.com/adtech-solutions"
+        "start": "MAY 2025",
+        "end": "AUG 2025",
+        "role": "SDE Intern",
+        "company": "Amazon",
+        "description": "Designed and deployed Cerberus, an AI agent that aggregates and analyzes service performance metrics for global AdTech systems. Serves 80+ program-region combinations and is scaled to operate 24/7."
     },
     "Tona": {
-      "start": "MAY",
-      "end": "AUG 2024",
-      "role": "SWE Intern",
-      "company": "Tona AI",
-      "description": "Full-stack developer for a startup integrating AI into the music production process. Cool work involving designing frontend UI/UX (React, Next.JS), developing backend ML models (PyTorch, LarsNet, Docker), and managing databases (AWS s3, Supabase).",
-      "link": "https://www.tona.ai/"
-    }, 
+        "start": "MAY 2024",
+        "end": "AUG 2024",
+        "role": "SWE Intern",
+        "company": "Tona AI",
+        "description": "Full-stack developer for a startup integrating AI into the music production process. Cool work involving designing frontend UI/UX (React, Next.JS), deploying backend ML models (PyTorch, LarsNet, Docker), and managing databases (AWS s3, Supabase).",
+        "link": "https://www.tona.ai/"
+    },
     "UCSB": {
-      "start": "JUN 2021",
-      "end": "AUG 2022",
-      "role": "Research Intern",
-      "company": "Media Arts & Technology Program @ UCSB",
-      "description": "Cognitive-science informed mappings from music to sculpture in pursuit of meaningful synaesthetic artwork (1) & exploring deep reinforcement learning as an experience in extended reality i.e. live ML training in AR/VR (2).",
-      "link": "https://ilab.cs.ucsb.edu/"
+        "start": "JUN 2021",
+        "end": "AUG 2022",
+        "role": "Research Intern",
+        "company": "Media Arts & Technology Program @ UCSB",
+        "description": "Cognitive-science informed mappings from music to sculpture in pursuit of meaningful synaesthetic artwork (1) exploring deep reinforcement learning as an experience in extended reality i.e. live ML training in AR/VR (2).",
+        "link": "https://ilab.cs.ucsb.edu/"
     }
 }

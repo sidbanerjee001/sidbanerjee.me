@@ -1,32 +1,79 @@
 {
-     "1": {
-        "title": "Max/MSP Patches, Performances, & Sound Design",
-        "desc": "My work on the DSP/ML/Mathematical side of music, primarily using Max/MSP to create synthesizers, sequencers, and algorithmic sounds. I'm also exploring + documenting physical synthesis, Ableton techniques (plugins + M4L), and other technologies like SuperCollider and PureData.",
-        "link": "https://www.youtube.com/@SidBanerjee-p9z"
-    },
-    "2": {
-        "title": "Conversational Behavior Reasoning in Full-Duplex Speech",
-        "desc": "A framework that enables reasoning over conversational behaviors by modeling this process as causal inference within a Graph-of-Thought (GoT).",
-        "link": "https://got-duplex.github.io/"
-    }, 
-    "3": {
-        "title": "Modal Improvisation (Instrument)",
-        "desc": "Real-time MIDI functionality for a performance-ready instrument, built entirely in Max. Synth pad created from scratch using multichannel harmonics and versatile comb filtering.",
-        "link": "https://youtu.be/rDcdh9dqW9Q"
-    },
-    "4": {
-        "title": "AlumniDB",
-        "desc": "Service to connect students with alumni, fostering meaningful connections between curious learners and insightful mentors.",
-        "link": "https://github.com/sidbanerjee001/GradDashboard"
-    },
-    "5": {
-        "title": "3-Stage Audio Amplifier",
-        "desc": "5.5x gain amplifier (2.4% THD) with a filter, gain, and output stage. Designed & tested in LTSpice and brought to life with spare parts.",
-        "link": "https://youtu.be/_K2gZXFDqv8"
-    }, 
-    "6": {
-        "title": "Chord Structure Analyzer",
-        "desc": "An algorithm in Python with music21 to process chord changes given a MusicXML file and analyze them, structurally, for real-time practice.",
-        "link": "https://youtu.be/lsKyYaAWFOA"
-    }
+    "featured": [
+        {
+            "title": "Model:Orchestra (Live Performance)",
+            "desc": "Ambient pads derived granularly from the sound of an orchestra tuning, with parameters to control repitching, voice mixing, chord quality, and final filter. Generative piano powered by randomized rhythm and pitch controls.",
+            "tools": "Max/MSP",
+            "youtube": "PYEnzAsAwf8",
+            "year": "2026"
+        },
+        {
+            "title": "2017SWAG",
+            "desc": "Hyperpop/electroclash music.",
+            "tools": "Ableton",
+            "youtube": "uCUPeTZ2wrs",
+            "year": "2024"
+        },
+        {
+            "title": "Cross Synthesis Max Plugin",
+            "desc": "Implementation of cross synthesis (spectral processing) via pfft~. The technique used is whitening the carrier's spectrum before multiplying (i.e. applying) the modulator's spectrum.",
+            "tools": "Max/MSP",
+            "youtube": "VilHcAqwgGE",
+            "year": "2026"
+        },
+        {
+            "title": "Pixl.FM VFX for Live Performance",
+            "desc": "Per-song vfx for artist Pixl.FM's live show at Thorsen House [11/7/2026]; keybind controls switch between songs and B-roll, and toggle in-song effects.",
+            "tools": "TouchDesigner",
+            "youtube": "-eLcusknuG0",
+            "year": "2026"
+        },
+        {
+            "title": "Death, Shoegaze, and Cloud Rap",
+            "desc": "One of my favorite beats I produced.",
+            "tools": "Ableton",
+            "youtube": "HNFBQIwo3Hk",
+            "year": "2024"
+        },
+        {
+            "title": "Modal Improvisation (Instrument)",
+            "desc": "Real-time MIDI functionality for a performance-ready instrument, built entirely in Max. Synth pad created from scratch using multichannel harmonics and versatile comb filtering.",
+            "tools": "Max/MSP",
+            "youtube": "rDcdh9dqW9Q",
+            "year": "2024"
+        }
+    ],
+    "channels": [
+        {
+            "label": "Max/MSP Patches, Performances & Sound Design",
+            "desc": "Synthesizers, sequencers, and algorithmic sound in Max/MSP; also documenting physical synthesis, and Ableton techniques (plugins + M4L).",
+            "href": "https://www.youtube.com/@SidBanerjee-p9z"
+        },
+        {
+            "label": "Original Music",
+            "desc": "All my productions in Ableton: a blend of electronic/hyperpop, cloud rap, and jazz.",
+            "href": "https://www.youtube.com/@iudexsbane"
+        }
+    ],
+    "other": [
+        {
+            "title": "3.3x Gain Audio Amplifier [2022]",
+            "desc": "5.5x gain amplifier (2.4% THD) with a filter, gain, and output stage.",
+            "href": "https://www.youtube.com/watch?v=_K2gZXFDqv8"
+        },
+        {
+            "title": "Chord Flow [2021]",
+            "desc": "An algorithm in Python with music21 to process chord changes given a MusicXML file and analyze them, structurally, for real-time practice.",
+            "href": "https://www.youtube.com/watch?v=lsKyYaAWFOA"
+        },
+        {
+            "title": "AlumniDB",
+            "desc": "Service to connect students with alumni mentors.",
+            "href": "https://github.com/sidbanerjee001/GradDashboard"
+        },{
+            "title": "Aveenis",
+            "desc": "Full-stack application to track stock sentiment from social media sources.",
+            "href": "https://github.com/sidbanerjee001/Aveenis/tree/main"
+        }
+    ]
 }

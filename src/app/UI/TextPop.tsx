@@ -6,7 +6,7 @@ interface BlueTextWrapperProps {
 
 const TextPop: React.FC<BlueTextWrapperProps> = ({ children }) => {
   return (
-    <span className="text-[#8080ff]">
+    <span className="text-accent-ink">
       {children}
     </span>
   );

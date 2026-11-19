@@ -47,7 +47,7 @@ In my demonstration I hooked up the `kslider` to a synth pad I’d designed a wh
 
 # Max Patch
 
-![Max Patch](https://media.discordapp.net/attachments/859919770047217675/1388595617114226708/MarkovImprov.png?ex=68618df1&is=68603c71&hm=ea85e33579092e3549c8719755d151caa1558788c603114a036b6e557b81bd0c&=&format=webp&quality=lossless&width=1162&height=1278)
+![Max Patch](/img/notes/MarkovImprov.png)
 
 [Audio Recording](https://youtu.be/pRIoKkIoxlo)
 

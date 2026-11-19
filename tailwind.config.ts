@@ -13,6 +13,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         accent: "#8080ff",
+        // Darker accent for text: ~6:1 contrast on white (WCAG AA). Keep #8080ff for lines/underlines.
+        "accent-ink": "#5050d0",
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', ...fontFamily.sans]

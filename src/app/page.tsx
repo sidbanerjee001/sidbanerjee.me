@@ -1,156 +1,128 @@
-'use client'
-
-import { useState } from "react";
-import Link from "next/link";
-import Image from 'next/image';
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 
 import TextPop from "./UI/TextPop";
-import ExperienceRender from "./UI/Experience";
+import Section from "./UI/Section";
 import GithubIcon from "./UI/GithubIcon";
-
-import profileImage from './Img/profile.jpg';
-import { useRouter } from "next/navigation";
-import WritingIcon from "./UI/LinkedInIcon";
-
-import ExperienceData from './Data/Experiences.json';
-import ProjectData from './Data/Projects.json';
-import NotesData from './Data/Notes.json';
-import ResearchData from './Data/Research.json';
-
-import ProjectPreviewRender from "./UI/ProjectPreview";
-import NotesPreviewRender from "./UI/NotesPreview";
+import LinkedInIcon from "./UI/LinkedInIcon";
 import ResearchRender from "./UI/Research";
+import CreativeWork from "./UI/CreativeWork";
+import ExperienceRender from "./UI/Experience";
+import Writing from "./UI/Writing";
+import OpenOnHash from "./UI/OpenOnHash";
 
-const About = () => {
+import profileImage from "./Img/profile.jpg";
 
-  return (
-    <div id="blurb-wrapper" className="my-10 text-sm">
-    <p className="my-4">
-      I'm a senior at UC Berkeley studying Electrical Engineering &amp; Computer Science.
-      My academic interests are in <TextPop>digital signal processing, acoustics/computational musicology (specifically MIR), and machine learning.</TextPop>
-    </p>
+import ExperienceData from "./Data/Experiences.json";
+import ProjectData from "./Data/Projects.json";
+import ResearchData from "./Data/Research.json";
 
-    <p className="my-4">
-      My work is mainly focused on DSP signal chains and deep learning algorithms to better understand, characterize, and create music. I'm aim <i>not</i> to develop end-to-end generative AI models but rather use AI/ML as a means of "crunching musical data" to reveal interesting, hidden structures &amp; power algorithms in human-centric composition tools.
-    </p>
+// Drop a PDF at public/cv.pdf and the CV link appears automatically.
+const HAS_CV = fs.existsSync(path.join(process.cwd(), "public/cv.pdf"));
 
-    <p className="my-4">
-      I create music/art via Max (+ TouchDesigner) and Ableton. My Max patches are usually techniques for synthesis, including cross synthesis, subtractive synthesis, and granular synthesis. I prefer TouchDesigner for audio-reactive visuals (over Jitter) and use OSC to connect to my Max patches. The music I produce with Ableton can be best described as a blend of electronic/hyperpop, cloud rap, and jazz.
-    </p>
+const NAV = [
+    { id: "research", label: "research" },
+    { id: "work", label: "creative work" },
+    { id: "experience", label: "experience" },
+    { id: "writing", label: "writing" },
+];
 
-    <div className="my-4">
-      At university, I conduct research @ CNMAT and BAIR on the following projects:
-      <ul className='list-disc list-inside px-4 my-4'>
-        <li className="mb-2">
-          Studying the impact of deep learning modules on generated compositions to understand how context and memory benefit/impair creativity.
-        </li>
-        <li className="mb-2">
-          Morphological and perceptually driven Matching Pursuit for computer-assisted orchestration.
-        </li>
-        <li className="mb-2">
-          <Link 
-          href="http://got-duplex.github.io/" 
-          target="_blank" 
-          className="inline-flex items-center text-gray-500 hover:text-gray-400 transition"
-          >
-            <span className="underline decoration-[#8080ff]"><TextPop>Conversational behavior modeling</TextPop></span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-3 ml-1">
-              <path 
-                fillRule="evenodd" 
-                d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" 
-                clipRule="evenodd" 
-              />
-            </svg>
-          </Link>
-          &nbsp; through predictive transformer models and dynamic Graph of Thought generation
-        </li>
-      </ul> 
-      I'm also a recitation/discussion leader on course staff of ELENG66 (Signal Processing &amp; Applied Linear Algebra); I work with the team to write and teach course content.
+const About = () => (
+    <div className="space-y-4 text-gray-800">
+        <p>
+            I&apos;m a senior at UC Berkeley studying Electrical Engineering &amp; Computer Science, working at the intersection of{" "}
+            <TextPop>digital signal processing</TextPop>, <TextPop>music information retrieval</TextPop>, and <TextPop>machine learning</TextPop>.
+        </p>
+        <p>
+            I'm excited about using data and machine learning as a means of &ldquo;crunching musical data&rdquo;:
+            revealing hidden structures in music and powering human-centric composition tools. I conduct research at CNMAT and BAIR,
+            and teach recitations for ELENG 66 (Signal Processing &amp; Applied Linear Algebra).
+        </p>
+        <p>
+            I also make music and art: synthesis instruments in Max, audio-reactive visuals in TouchDesigner,
+            and productions in Ableton that blend electronic/hyperpop, cloud rap, and jazz.
+        </p>
+        <p className="text-sm text-gray-600 pt-2">
+            Contact: sidbanerjee[at]berkeley.edu
+        </p>
     </div>
-
-    <hr className="my-5 border-[#8080ff30] w-[10%]" />
-
-    <p className="text-gray-500 text-sm">
-      Talk [jazz, art, computer science, math, etc.] with me: sidbanerjee[at]berkeley.edu.
-    </p>
-
-    <div className="my-5">
-      <TextPop><Link href="https://www.youtube.com/@iudexsbane">→ Music</Link></TextPop><br/>
-      <TextPop><Link href="/music">→ Notes on Music</Link></TextPop>
-    </div>
-  </div>
-  );
-}
+);
 
 export default function Home() {
-  const router = useRouter();
+    return (
+        <div className="max-w-3xl mx-auto px-6">
+            <header className="pt-20 pb-10 flex flex-row items-end justify-between gap-6">
+                <div>
+                    <h1 className="font-medium text-2xl text-gray-900">Sid Banerjee</h1>
+                    <p className="mt-3 text-gray-800">
+                        Musician &amp; engineer working on audio ML, DSP, and interactive music systems.
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">EECS @ UC Berkeley · Class of 2027</p>
+                    <div className="mt-5 flex flex-row items-center gap-x-4">
+                        {HAS_CV && (
+                            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
+                               className="py-[3px] px-4 border-[1.5px] border-black text-sm transition hover:text-accent-ink hover:border-accent">
+                                CV
+                            </a>
+                        )}
+                        <a href="https://github.com/sidbanerjee001" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <GithubIcon />
+                        </a>
+                        <a href="https://www.linkedin.com/in/sidbanerjee00/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <LinkedInIcon />
+                        </a>
+                    </div>
+                </div>
+                <div className="w-[125px] h-[125px] shrink-0 relative overflow-hidden rounded-sm">
+                    <Image
+                        src={profileImage}
+                        alt="Sid Banerjee"
+                        width={250}
+                        height={150}
+                        className="object-cover scale-[150%]"
+                        quality={90}
+                        priority
+                    />
+                </div>
+            </header>
 
-  const [currentTab, setCurrentTab] = useState('about');
+            <nav className="sticky top-0 z-10 -mx-6 px-6 py-3 bg-white/90 backdrop-blur border-b border-gray-200">
+                <ul className="flex flex-row flex-wrap gap-x-6 gap-y-1 text-sm">
+                    {NAV.map((n) => (
+                        <li key={n.id}>
+                            <a href={`#${n.id}`} className="text-gray-600 hover:text-gray-900 underline-offset-[5px] decoration-2 decoration-accent/60 hover:underline">
+                                {n.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
 
-  const tabs = [
-    { name: 'about', value: 'about' },
-    { name: 'experience', value: 'experience' },
-    { name: 'research', value: 'research' },
-    { name: 'projects', value: 'projects' },
-    { name: 'notes', value: 'notes'}
-  ]
+            <section id="about" className="py-10">
+                <About />
+            </section>
 
-  const tabsMap = new Map([
-    ["about", <About/>],
-    ["experience", <ExperienceRender ExperienceData={ExperienceData}/>],
-    ["research", <ResearchRender ResearchData={ResearchData}/>],
-    ["projects", <ProjectPreviewRender data={ProjectData}/>],
-    ["notes", <NotesPreviewRender data={NotesData}/>]
-  ])
+            <Section id="research" title="Research">
+                <ResearchRender ResearchData={ResearchData} />
+            </Section>
 
-  return (
-    <>
-      <div id="full-wrapper" className="w-[85%] lg:w-[50%] m-auto my-24">
-        <div id="header-wrapper" className="my-10 flex flex-row items-end justify-between">
-          <div>
-            <div className="flex flex-row">
-              <h1 className="font-medium text-xl">Sid Banerjee</h1>
-              <div id="social-buttons-wrapper" className="flex flex-row justify-end gap-x-4 mx-4">
-                <button onClick={() => router.push("https://github.com/sidbanerjee001")}>
-                  <GithubIcon/>
-                </button>
-                <button onClick={() => router.push("https://www.linkedin.com/in/sidbanerjee00/")}>
-                  <WritingIcon/>
-                </button>
-              </div>
-            </div>
-            <h2 className="text-md mt-6"><TextPop>Musician</TextPop> and <TextPop>Engineer</TextPop>, in the Media Arts &amp; Technology</h2>
-            <h2 className="text-sm text-gray-400 mt-2">Student @ UC Berkeley, CO 2027</h2>
-          </div>
-          <div className="w-[125px] h-[125px] relative overflow-hidden rounded-sm mx-5 lg:mx-0">
-            <Image
-              src={profileImage}
-              alt="Profile Picture"
-              width={250}
-              height={150}
-              className="object-cover lg:scale-[150%] scale-[150%]"
-              quality={90}
-              priority
-            />
-          </div>
+            <Section id="work" title="Selected Creative Work & Projects">
+                <CreativeWork data={ProjectData} />
+            </Section>
+
+            <Section id="experience" title="Experience">
+                <ExperienceRender ExperienceData={ExperienceData} />
+            </Section>
+
+            <Section id="writing" title="Writing">
+                <Writing />
+            </Section>
+
+            <footer className="py-12 border-t border-gray-200 text-xs text-gray-500">
+                © {new Date().getFullYear()} Sid Banerjee
+            </footer>
         </div>
-
-        <hr/>
-
-        <div id="tabs" className="my-10 flex flex-row items-center">
-          {tabs.map((data, index) => (
-            <div key={index} className="mr-10">
-              <button onClick={() => setCurrentTab(data.value)}>
-                <p className={currentTab != data.value ? `text-sm md:text-base text-gray-400 relative after:bg-[#8080ff]/50 after:absolute after:h-[3px] after:w-0 md:after:bottom-[-1px] after:bottom-[-2.5px] after:left-0 hover:after:w-full after:transition-all after:duration-300` : `text-sm md:text-base underline underline-offset-[4.5px] decoration-[3px] decoration-[#8080ff]/50`}>{data.name}</p>
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <div id="content-wrapper" className="mt-8">
-          {tabsMap.get(currentTab) || <p>No content here...</p>}
-        </div>
-      </div>
-    </>
-  );
+    );
 }

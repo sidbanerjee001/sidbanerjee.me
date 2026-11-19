@@ -22,7 +22,6 @@ export async function generateStaticParams() {
 }
 
 export default async function NotesPage({ params }: { params: Params }) {
-  const { slug } = await params;
   const p = await params;
   const filePath = path.join(process.cwd(), 'src/NotesMD', `${p.slug}.md`);
 
@@ -35,16 +34,16 @@ export default async function NotesPage({ params }: { params: Params }) {
 
   return (
     <div id="full-wrapper" className="w-[80%] lg:w-[60%] m-auto my-24">
-        <a href={"https://sidbanerjee.me"}>
+        <Link href="/" aria-label="Back to home">
             <svg viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M20 12H4m0 0l6-6m-6 6l6 6"></path> </g></svg>
-        </a>
+        </Link>
         <div id="header-wrapper" className="my-8 flex flex-row items-end justify-between">
             <div>
                 <div className="flex flex-row">
                     <h1 className="font-medium text-xl">{data.title || p.slug}</h1>
                 </div>
                 <div className="mt-4">
-                    <span className="text-xs text-gray-400">{data.date}</span>
+                    <span className="text-xs text-gray-500">{data.date}</span>
                 </div>
                 {data.link ? <>
                     <div className="mt-4">
