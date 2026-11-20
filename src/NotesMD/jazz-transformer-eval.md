@@ -7,7 +7,7 @@ The Jazz Transformer (Wu & Yang, ISMIR 2020) is a Transformer-XL trained to gene
 
 This research asks a narrow question: when a model takes a risk, how justified is that risk in the context of jazz?
 
-The short version: at sampling temperature $T = 1.2$, generated solos take risks at a slightly lower rate than human players, but continue after them and fit them to the chords in a human way. Raising the temperature changes how many risks the model takes much more than how it handles them.
+The short version: at sampling temperature $T = 1.2$, generated solos take risks at a slightly lower rate than human players, but continue after them and fit them to the chords in a human way. Raising the temperature changes how many risks the model takes much more than how it handles them. A chord-blind Markov baseline also looks human by $J$, but chord fit separates it from both humans and the transformer, and only the transformer's harmonic gain disappears when it is given the wrong chords.
 
 ---
 
@@ -19,6 +19,7 @@ All results use the pretrained checkpoint `jazz-trsfmr-B-loss0.25`: a 12-layer T
 | --- | --- |
 | Human corpus | Weimar Jazz Database (WJazzD), 431 solos in 4/4; 409 used to train the judges, 22 held out |
 | Generated set | 10 solos of 32 bars at temperature 1.2 |
+| Markov baseline | Two first-order chains with no chords, fit on 372 WJazzD training solos; 22 solos of 32 bars; see the baseline section below |
 
 Everything measured by the "judges" below is in bits per note.
 
@@ -98,15 +99,16 @@ So each set of solos gets three numbers: how many risks it takes (surprise), how
 
 At $T = 1.2$ the transformer is close to human practice on all three:
 
-| Measure | Human (22 held-out WJazzD solos) | Generated |
-| --- | --- | --- |
-| Risk events per 100 notes | 4.4 | 3.8 |
-| $J$: flagged at 5% false-alarm rate | 4.7% | 1.9% |
-| $J$: AUC against human risks | 0.51 | 0.52 |
-| Chord fit: flagged | 3.5% | 2.9% |
-| Chord fit: AUC against human risks | 0.48 | 0.46 |
+| Measure | Human (22 held-out WJazzD solos) | Transformer, $T = 1.2$ (10) | Markov, WJazzD fit (22) |
+| --- | --- | --- | --- |
+| Risk events per 100 notes | 4.4 | 3.8 | 6.5 |
+| $J$: flagged at 5% false-alarm rate | 4.7% | 1.9% | 2.9% |
+| $J$: AUC against human risks | 0.51 | 0.52 | 0.48 |
+| Chord fit: flagged | 3.5% | 2.9% | **11.3%** |
+| Chord fit: AUC against human risks | 0.48 | 0.46 | **0.67** |
+| Chord fit: mean over risk windows (bits) | +0.36 | +0.42 | −0.47 |
 
-The model takes slightly fewer risks, continues after them like a human, and fits the chords at least as well. With only 105 generated risk events, none of these gaps is meaningful.
+The transformer takes slightly fewer risks than humans, continues after them like a human, and fits the chords at least as well. With only 105 generated risk events, none of these gaps is meaningful. The Markov column is a chord-blind baseline, covered in the baseline section below: $J$ can't tell it from human, but chord fit can.
 
 # Rationalizing the judge models
 
@@ -127,9 +129,32 @@ A temperature sweep tells the same story. Raising $T$ raises the risk rate (1.2 
 
 ---
 
+# Baseline: a context-less Markov chain
+
+If the transformer's risks fit the chords because it actually uses the harmony, a generator that never sees the harmony should fail exactly where the transformer passes. To test that, we scored ImprovMachine's Markov baseline: two independent first-order chains, one over absolute pitch and one over rhythm, with no chords at all. We fit it on 372 WJazzD training solos, generated 22 solos of 32 bars, and laid solo $i$ over the changes of WJazzD val song $i$. The judges and the human calibration are unchanged.
+
+**$J$ can't tell the chain from a human player** (AUC 0.48 in the Results table). A first-order pitch chain still follows a leap with ordinary-sized moves, which is what $J$ rewards. Judged only on how it continues, the chain looks like it handles its risks.
+
+**Chord fit can.** It flags 11.3% of Markov risks, against 3.5% for humans and 2.9% for the transformer (AUC 0.67). That's about the score of the "continuation ignores the harmony" corruption above (0.64), which is exactly what a chord-blind chain produces. On average, the notes around a Markov risk sit *worse* on the harmony than a harmony-blind guess (−0.47 bits). Around human and transformer risks they gain +0.36 and +0.42 bits. The chain's risks are random notes it happens to walk away from smoothly; the transformer's are notes the chords account for.
+
+**Swapping the chords confirms it.** The table below shows how much the chord-aware judge $B$ gains over the melody-only judge $A$ (bits per note) when each solo is scored under its own changes, under another val song's changes, or with no chords:
+
+| Set | Own changes | Changes of val song $i+1$ | $i+7$ | $i+13$ | No chords |
+| --- | --- | --- | --- | --- | --- |
+| Human (WJazzD val) | +0.074 | −0.006 | −0.032 | −0.049 | −0.027 |
+| Transformer, $T = 1.2$ | +0.129 | +0.006 | +0.004 | +0.008 | +0.020 |
+| Markov, WJazzD fit | +0.179 | +0.176 | +0.182 | +0.187 | +0.181 |
+
+The transformer behaves like a human here. Its gain is real under its own changes and drops to about zero under anyone else's, so its lines are written against the specific chords it was given. The Markov "gain" doesn't move at all, even with no chords. It isn't harmonic: the melody-only judge is confidently wrong about these lines (IC 0.69 bits above its own entropy, against 0.05 for humans), so mixing in any broader distribution lowers the cost. The chord-specific part of the gain is +0.10 bits for humans, +0.12 for the transformer, and 0.00 for the Markov chain.
+
+**Both generators take risks and move on from them smoothly. Only the transformer's risks fit the harmony, and only its harmonic gain depends on which chords it's given.** That is the difference between a risk that's justified by context and one that just happens to land.
+
+---
+
 # Caveats
 
 - The risk measures compare against WJazzD, which is mostly bebop and post-bop. They measure closeness to that style, not musical quality: a novel but good risk unlike anything in the corpus would get flagged.
 - $J$ can't tell a deliberate risk from a random note smoothed over afterwards, since both leave the same notes.
 - Chord fit is a weak signal (a real note gains only 0.18 bits on average), so it separates *sets* of risks, not single notes.
 - The generated sets are small: 17–105 risk events per temperature.
+- The Markov baseline is one simple, chord-blind generator. The judges are also miscalibrated on its lines, which inflates its risk rate (6.5 per 100 notes), so it is better compared by $J$ and chord fit than by how many risks it takes.

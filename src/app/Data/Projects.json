@@ -12,7 +12,7 @@
             "desc": "Hyperpop/electroclash music.",
             "tools": "Ableton",
             "youtube": "uCUPeTZ2wrs",
-            "year": "2024"
+            "year": "2026"
         },
         {
             "title": "Cross Synthesis Max Plugin",
@@ -65,15 +65,6 @@
             "title": "Chord Flow [2021]",
             "desc": "An algorithm in Python with music21 to process chord changes given a MusicXML file and analyze them, structurally, for real-time practice.",
             "href": "https://www.youtube.com/watch?v=lsKyYaAWFOA"
-        },
-        {
-            "title": "AlumniDB",
-            "desc": "Service to connect students with alumni mentors.",
-            "href": "https://github.com/sidbanerjee001/GradDashboard"
-        },{
-            "title": "Aveenis",
-            "desc": "Full-stack application to track stock sentiment from social media sources.",
-            "href": "https://github.com/sidbanerjee001/Aveenis/tree/main"
         }
     ]
 }
